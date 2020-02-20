@@ -4,4 +4,7 @@ CREATE TABLE IF NOT EXISTS "price" (
 	"date" TEXT NOT NULL,
 	"value" INTEGER NOT NULL
 );
+
+INSERT INTO "price" (date, value) VALUES ('1970-01-01 00:00:00Z', 0);
+
 COMMIT;
