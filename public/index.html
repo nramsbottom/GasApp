@@ -1,6 +1,8 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/app.css">
@@ -11,15 +13,24 @@
 	<div ng-app="gasApp">
 		<div ng-controller="mainController" class="container">
 			<div class="row">
-			<h1>Fuel Price</h1>
-			</div>
-			<div class="row">
-				<img ng-hide="gotPrice" src="images/loading.gif" alt="Loading...">
-				{{lastPrice}} NOK <small>{{lastPriceTime}}</small>
+			<div class="col-xs-6">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Last Price</h5>
+						<img ng-hide="gotPrice" src="images/loading.gif" alt="Loading...">
+						<p>{{lastPrice}} NOK<br /><small>{{lastPriceTime}}</small></p>
+					</div>
+				</div>
+				</div>
+				<div class="col-xs-6">
+				<div class="card">
+					<div class="card-body">
+					<h5 class="card-title">Update</h5>
+						<input type="text" ng-model="currentPrice" /><button ng-click="updatePrice()" ng-disabled="updating">Update</button>
+					</div>
+				</div>
 			</div>	
-			<div class="row">
-				<input type="text" ng-model="currentPrice" /><button ng-click="updatePrice()" ng-disabled="updating">Update</button>
-			<div>
+			</div>
 		</div>
 	</div>
 </body>
